@@ -54,7 +54,7 @@ col.remove('loss')
 col.remove('id')
 
 X = df_data_encoded[col]
-y = df_data_encoded.loss
+y = np.log10(df_data_encoded.loss) # conver the loss to log scale
 id = df_data_encoded.id
 
 X_train, X_test, y_train, y_test, id_train, id_test = train_test_split( X, y, id, test_size=0.33, random_state=1)
